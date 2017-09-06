@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+      <!--xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">-->
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+    <!--<img src="../static/img/pexels-photo-326055.jpg"/>-->
+    <link rel="stylesheet" href="/css/indexstyle.css">
+</head>
+
+<body>
+<!--style="background-image: url('/img/pixels-photo-326055.jpg')"-->
+<!--<div class="bgimg w3-display-container w3-animate-opacity w3-text-white" style="background-image: url('/img/pixels-photo-326055.jpg')">-->
+<img src = "/img/pixels-photo-326055.jpg">
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+
+    <div class="w3-display-topleft w3-padding-large w3-xlarge">
+        Insecure Page!
+    </div>
+    <div class="w3-display-middle">
+        <h1 class="w3-jumbo w3-animate-top">Landing Page</h1>
+
+
+
+        <div sec:authorize="isAuthenticated()">
+            This content is only shown to authenticated users.
+        </div>
+        <div sec:authorize="hasAuthority('ADMIN')">
+            This content is only shown to administrators.
+        </div>
+        <div sec:authorize="hasAuthority('USER')">
+            This content is only shown to users.
+        </div>
+
+        Logged user: <span sec:authentication="name">The user is not logged in yet</span>
+
+        <br><br>
+        <div><a href="/login" type="submit">Log In</a></div>
+        <br><br>
+        <div><a class="btn btn-secondary" href="/register" type = "submit">Register</a></div>
+        <br><br>
+        <div><a href="/logout">Logout</a></div>
+
+
+
+    </div>
+</div>
+
+
+
+<!--<h2>Insecure Page!</h2>-->
+<!--<br>-->
+<!--<h2>Landing Page</h2>-->
+<!--<br>-->
+<!--<h2>It worked!</h2>-->
+
+
+<!--It works!!!:::-->
+<!--Use for SpringSecurity #4:-->
+<!--<div sec:authorize="isAuthenticated()">-->
+    <!--This content is only shown to authenticated users.-->
+<!--</div>-->
+<!--<div sec:authorize="hasAuthority('ADMIN')">-->
+    <!--This content is only shown to administrators.-->
+<!--</div>-->
+<!--<div sec:authorize="hasAuthority('USER')">-->
+    <!--This content is only shown to users.-->
+<!--</div>-->
+
+<!--Logged user: <span sec:authentication="name">The user is not logged in yet</span>-->
+
+
+
+
+
+<!--Doesn't work:::-->
+<!--Roles: <span sec:authentication="principal.authorities">Principal Authorities not set</span>-->
+
+<!--Doesn't work:::-->
+<!--Use for SpringSecurity #3:-->
+<!--<div sec:authorize="isAuthenticated()">-->
+    <!--This content is only shown to authenticated users.-->
+<!--</div>-->
+<!--<div sec:authorize="hasRole('ROLE_ADMIN')">-->
+    <!--This content is only shown to administrators.-->
+<!--</div>-->
+<!--<div sec:authorize="hasRole('ROLE_USER')">-->
+    <!--This content is only shown to users.-->
+<!--</div>-->
+
+<!--Logged user: <span sec:authentication="name">Bob</span><br>-->
+<!--Roles: <span sec:authentication="principal.authorities">[ROLE_USER, ROLE_ADMIN]</span>-->
+
+<!--Logged user: <span sec:authentication="name">The user is not logget in yet</span>-->
+<!--Roles: <span sec:authentication="principal.authorities">Principal Authorities not set</span>-->
+
+<!--<br><br>-->
+<!--<a href="/secure" type="submit">Secure Page</a>-->
+<!--<h2>User Page</h2>-->
+
+
+
+
+
+<!--<br><br>-->
+<!--<div><a href="/login" type="submit">Log In</a></div>-->
+<!--<br><br>-->
+<!--<div><a class="btn btn-secondary" href="/register" type = "submit">Register</a></div>-->
+<!--<br><br>-->
+<!--<div><a href="/logout">Logout</a></div>-->
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+<!--<!DOCTYPE html>-->
+
+<!--<html lang="en" xmlns:th="www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">-->
+<!--<head th:replace="base :: headstuff">-->
+
+<!--</head>-->
+
+<!--<body>-->
+
+<!--<nav th:replace="base :: navbar"></nav>-->
+<!--<div class="container">-->
+    <!--<div class="jumbotron">-->
+        <!--<h1>Hello, world!</h1>-->
+        <!--<p>...</p>-->
+        <!--<p><a class="btn btn-primary btn-lg" href="/secure" role="button">Go to Secure</a></p>-->
+    <!--</div>-->
+<!--</div>-->
+<!--<nav th:replace="base :: footer"></nav>-->
+<!--<th:block th:replace="base :: jslinks"></th:block>-->
+<!--</body>-->
+
+<!--</html>-->
+
+
+
+
