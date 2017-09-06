@@ -14,17 +14,20 @@
 
     <!--<img src="../static/img/pexels-photo-326055.jpg"/>-->
     <link rel="stylesheet" href="/css/indexstyle.css">
+    <link rel="stylesheet" href="/css/indexB.css">
+
 </head>
 
 <body>
 <!--style="background-image: url('/img/pixels-photo-326055.jpg')"-->
 <!--<div class="bgimg w3-display-container w3-animate-opacity w3-text-white" style="background-image: url('/img/pixels-photo-326055.jpg')">-->
-<img src = "/img/pixels-photo-326055.jpg">
+<!--<img src = "/img/pexels-photo-326055.jpg">-->
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
 
     <div class="w3-display-topleft w3-padding-large w3-xlarge">
         Insecure Page!
     </div>
+
     <div class="w3-display-middle">
         <h1 class="w3-jumbo w3-animate-top">Landing Page</h1>
 
@@ -40,19 +43,35 @@
             This content is only shown to users.
         </div>
 
-        Logged user: <span sec:authentication="name">The user is not logged in yet</span>
+        <div style="text-align: center"> Logged user: <span sec:authentication="name">The user is not logged in yet</span>
+            <br><br>
+            <div style="text-align: center">
 
-        <br><br>
-        <div><a href="/login" type="submit">Log In</a></div>
-        <br><br>
-        <div><a class="btn btn-secondary" href="/register" type = "submit">Register</a></div>
-        <br><br>
-        <div><a href="/logout">Logout</a></div>
+
+                <!--<row style="text-align: center">-->
 
 
 
+
+
+
+                    <a href="/login" type="submit">Log In</a>
+                    <br>
+                    <a class="button" href="/register" type = "submit">Register</a>
+                    <br>
+                    <a href="/logout">Logout</a>
+                    <br>
+
+
+
+                <!--</row>-->
+
+
+            </div>
+
+
+        </div>
     </div>
-</div>
 
 
 
@@ -118,10 +137,10 @@
 <!--<div><a href="/logout">Logout</a></div>-->
 
 
+</div>
 
 
-
-
+    <script src="/static/js/indexJ.js"></script>
 </body>
 </html>
 
